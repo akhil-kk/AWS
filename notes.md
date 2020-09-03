@@ -67,6 +67,52 @@ Access advisor shows the service eprmissions granted to auser and when those ser
 * Use Access Keys for Programmatic Access.
 * Audit permissions of your account with the IAM credentails report.
 
+## Amazon EC2
+
+* Most popular of AWS' offering.
+* EC2 = Elastic Compute Cloud = Infrastructure as aservice.
+* Capabilities
+    * Reting VMs (EC2).
+    * Storing data on Virtual drives(EBS).
+    * Distributing load across machines(ELB).
+    * Scaling services using an auto-scaling group (ASG).
+
+## EC2 sizing & Config
+
+* OS
+* CPU
+* RAM
+* Storage 
+    * Network-attached(EBS & EFS)
+    * hardsware (EC2 instance & Store)
+* N/W card
+* Bootstrap script: EC2 user data.
+
+## EC2 instance types, examples
+
+![Ec2 instance types](img/ec2.png?raw=true "Title")
+
+## Launching an EC2 instance
+
+ * Choose an Amazon Machine Image (AMI) - contains all your software config.
+
+## Introduction to Security groups
+
+* Act as a firewall on EC2 instances.
+* How traffic is allowed into or out of our EC2 instances.
+* Security groups only contain allow groups
+* Security groups can reference by Ip or by security group.
+* They regulate 
+    * Access to ports
+    * Authorised IP ranges
+
+## Ports to know
+
+![Ports](img/ports.png?raw=true "Title")
+
+
+
+
 
 
 

@@ -209,14 +209,24 @@ offerings such as Amazon EC2
 * Load balancers are servers that forward internet traffic to multiple servers (EC2 Instances) downstream.
 
     **Why use a load balancer?**
-    • Spread load across multiple downstream instances
-    • Expose a single point of access (DNS) to your application
-    • Seamlessly handle failures of downstream instances
-    • Do regular health checks to your instances
-    • Provide SSL termination (HTTPS) for your websites
-    • High availability across zones
+
+    * Spread load across multiple downstream instances
+    * Expose a single point of access (DNS) to your application
+    * Seamlessly handle failures of downstream instances
+    * Do regular health checks to your instances
+    * Provide SSL termination (HTTPS) for your websites
+    * High availability across zones
 ## 3 kinds of load balancers offered by AWS:
 
 * Application Load Balancer (HTTP / HTTPS only) – Layer 7
 * Network Load Balancer (ultra-high performance, allows for TCP) – Layer 4
 * Classic Load Balancer (slowly retiring) – Layer 4 & 7
+
+## Auto Scaling Group
+
+* The goal of an Auto Scaling Group (ASG) is to:
+    * Scale out (add EC2 instances) to match an increased load
+    * Scale in (remove EC2 instances) to match a decreased load
+    * Ensure we have a minimum and a maximum number of machines running
+    * Automatically register new instances to a load balancer
+    * Replace unhealthy instances

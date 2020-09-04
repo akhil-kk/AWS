@@ -110,13 +110,64 @@ Access advisor shows the service eprmissions granted to auser and when those ser
 
 ![Ports](img/ports.png?raw=true "Title")
 
+## SSH
+
+![SSH](img/ssh.png?raw=true "Title")
+
+## EC2 instance launch types
+
+* On demand instance; short workload, predictable pricing
+* Reserved: (min 1year)
+* Dedicated hosts.
+* Spot instances
+
+## EC2 instance Storage
+
+### EBS volume (Elastic Block Store)
+
+* network drive you can attach to your instances while they run.
+* It allows your instances to persist data even after their termination.
+
+**EBS Volume**
+
+* Its a network drive
+* Uses nw to communicate to instance.
+* It can be detached from an EC2 instance and attcahed to another one.
+* Its locked to an availability zone
+* To move volume across, you need to snapshot it.
+* Have provisioned capacity.
+
+## EBS Snapshots
+
+* Make a backup of your EBS volume at a point in time.
+* Not necessary to detach volume eto do snapshot, but recommended.
+* Can copy snaoshots across AZ or Region.
+
+## AMI
+
+* AMI = Amazon Machine Image
+* AMI are a customization of an EC2 instance
+* You add your own software, configuration, operating system, monitoring…
+* Faster boot / configuration time because all your software is pre-packaged
+* AMI are built for a specific region (and can be copied across regions)
+* You can launch EC2 instances from:
+* A Public AMI: AWS provided
+* Your own AMI: you make and maintain them yourself
+
+## EC2 Instance Store
+
+* EBS volumes are network drives with good but “limited” performance
+* If you need a high-performance hardware disk, use EC2 Instance Store
+* Better I/O performance
+* EC2 Instance Store lose their storage if they’re stopped (ephemeral)
+* Good for buffer / cache / scratch data / temporary content
+* Risk of data loss if hardware fails
+* Backups and Replication are your responsibility
 
 
 
 
 
-
-
-    
+    .
 
 

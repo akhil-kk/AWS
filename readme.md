@@ -137,13 +137,13 @@ Access advisor shows the service eprmissions granted to auser and when those ser
 * To move volume across, you need to snapshot it.
 * Have provisioned capacity.
 
-## EBS Snapshots
+### EBS Snapshots
 
 * Make a backup of your EBS volume at a point in time.
 * Not necessary to detach volume eto do snapshot, but recommended.
 * Can copy snaoshots across AZ or Region.
 
-## AMI
+### AMI
 
 * AMI = Amazon Machine Image
 * AMI are a customization of an EC2 instance
@@ -154,7 +154,7 @@ Access advisor shows the service eprmissions granted to auser and when those ser
 * A Public AMI: AWS provided
 * Your own AMI: you make and maintain them yourself
 
-## EC2 Instance Store
+### EC2 Instance Store
 
 * EBS volumes are network drives with good but “limited” performance
 * If you need a high-performance hardware disk, use EC2 Instance Store
@@ -164,7 +164,7 @@ Access advisor shows the service eprmissions granted to auser and when those ser
 * Risk of data loss if hardware fails
 * Backups and Replication are your responsibility
 
-## EFS – Elastic File System
+### EFS – Elastic File System
 * Managed NFS (network file system) that can be mounted on 100s of EC2
 * EFS works with Linux EC2 instances in multi-AZ
 * Highly available, scalable, expensive (3x gp2), pay per use, no capacity planning
@@ -172,4 +172,51 @@ Access advisor shows the service eprmissions granted to auser and when those ser
 ![EBSvsEFS](img/ebsVsefs.png?raw=true "Title")
 
 
+## Elastic Load Balancing and Auto Scaling
 
+### Scalability & High Availability
+* Scalability means that an application / system can handle greater loads
+by adapting.
+* There are two kinds of scalability:
+* Vertical Scalability
+* Horizontal Scalability (= elasticity)
+* Scalability is linked but different to High Availability
+
+## Vertical Scalability
+* Vertical Scalability means increasing the size
+of the instance
+* For example, your application runs on a
+t2.micro
+* Scaling that application vertically means
+running it on a t2.large
+* Vertical scalability is very common for non
+distributed systems, such as a database.
+* There’s usually a limit to how much you can
+vertically scale (hardware limit)
+
+## Horizontal Scalability
+* Horizontal Scalability means increasing the
+number of instances / systems for your
+application
+* Horizontal scaling implies distributed systems.
+* This is very common for web applications /
+modern applications
+* It’s easy to horizontally scale thanks the cloud
+offerings such as Amazon EC2
+
+## Load Balancers
+
+* Load balancers are servers that forward internet traffic to multiple servers (EC2 Instances) downstream.
+
+    **Why use a load balancer?**
+    • Spread load across multiple downstream instances
+    • Expose a single point of access (DNS) to your application
+    • Seamlessly handle failures of downstream instances
+    • Do regular health checks to your instances
+    • Provide SSL termination (HTTPS) for your websites
+    • High availability across zones
+## 3 kinds of load balancers offered by AWS:
+
+* Application Load Balancer (HTTP / HTTPS only) – Layer 7
+* Network Load Balancer (ultra-high performance, allows for TCP) – Layer 4
+* Classic Load Balancer (slowly retiring) – Layer 4 & 7

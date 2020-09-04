@@ -164,10 +164,12 @@ Access advisor shows the service eprmissions granted to auser and when those ser
 * Risk of data loss if hardware fails
 * Backups and Replication are your responsibility
 
+## EFS – Elastic File System
+* Managed NFS (network file system) that can be mounted on 100s of EC2
+* EFS works with Linux EC2 instances in multi-AZ
+* Highly available, scalable, expensive (3x gp2), pay per use, no capacity planning
 
+![EBSvsEFS](img/ebsVsefs.png?raw=true "Title")
 
-
-
-    .
 
 

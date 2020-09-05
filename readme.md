@@ -231,7 +231,7 @@ offerings such as Amazon EC2
     * Automatically register new instances to a load balancer
     * Replace unhealthy instances
 
-    ## Amazon S3
+## Amazon S3
 
 * Amazon S3 is one of the main building blocks of AWS
 * It’s advertised as ”infinitely scaling” storage.
@@ -255,3 +255,19 @@ offerings such as Amazon EC2
 * The key is the FULL path:
     * s3://my-bucket/my_file.txt
     * s3://my-bucket/my_folder1/another_folder/my_file.txt
+
+## S3 Bucket Policies
+
+* JSON based policies
+    * Resources: buckets and objects
+    * Actions: Set of API to Allow or Deny
+    * Effect: Allow / Deny
+    * Principal: The account or user to apply
+    the policy to
+* Use S3 bucket for policy to:
+    * Grant public access to the bucket
+    * Force objects to be encrypted at upload
+    * Grant access to another account (Cross
+    Account)
+
+![s3 bucket policy](img/s3policy.png?raw=true "Title")

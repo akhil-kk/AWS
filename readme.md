@@ -230,3 +230,28 @@ offerings such as Amazon EC2
     * Ensure we have a minimum and a maximum number of machines running
     * Automatically register new instances to a load balancer
     * Replace unhealthy instances
+
+    ## Amazon S3
+
+* Amazon S3 is one of the main building blocks of AWS
+* It’s advertised as ”infinitely scaling” storage.
+
+### S3 Use cases
+* Backup and storage
+* Disaster Recovery
+* Archive
+* Hybrid Cloud storage
+* Application hosting
+* Media hosting
+* Data lakes & big data analytics
+* Software delivery
+* Static website
+
+### Amazon S3 Overview - Buckets
+
+* Amazon S3 allows people to store objects (files) in “buckets” (directories)
+* Buckets must have a globally unique name (across all regions all accounts)
+* Objects (files) have a Key
+* The key is the FULL path:
+    * s3://my-bucket/my_file.txt
+    * s3://my-bucket/my_folder1/another_folder/my_file.txt

@@ -256,7 +256,7 @@ offerings such as Amazon EC2
     * s3://my-bucket/my_file.txt
     * s3://my-bucket/my_folder1/another_folder/my_file.txt
 
-## S3 Bucket Policies
+### S3 Bucket Policies
 
 * JSON based policies
     * Resources: buckets and objects
@@ -271,3 +271,30 @@ offerings such as Amazon EC2
     Account)
 
 ![s3 bucket policy](img/s3policy.png?raw=true "Title")
+
+### S3 Websites
+
+* S3 can host static websites and have them accessible on the www
+* The website URL will be:
+    * <bucket-name>.s3-website-<AWS-region>.amazonaws.com
+    OR
+    * <bucket-name>.s3-website.<AWS-region>.amazonaws.com
+
+## Amazon S3 - Versioning
+
+* You can version your files in Amazon S3
+* It is enabled at the bucket level
+* Same key overwrite will increment the “version”: 1, 2, 3….
+* It is best practice to version your buckets
+    * Protect against unintended deletes (ability to restore a version)
+    * Easy roll back to previous version
+
+### S3 Access Logs
+
+* For audit purpose, you may want to log all access to S3
+buckets
+* Any request made to S3, from any account, authorized or
+denied, will be logged into another S3 bucket
+* That data can be analyzed using data analysis tools…
+* Very helpful to come down to the root cause of an issue,
+or audit usage, view suspicious patterns, etc…

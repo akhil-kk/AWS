@@ -383,7 +383,7 @@ over the network, use Snowball devices!
 
 ## Databases & Analytics
 
-## Databases
+### Databases
 
 * Storing data on disk (EFS, EBS, EC2 Instance Store, S3) can have its limits
 * Sometimes, you want to store data in a database…
@@ -422,8 +422,7 @@ flexible schemas for building modern applications.
     * Microsoft SQL Server
     * Aurora (AWS Proprietary database)
 
-### Advantage over using RDS versus deploying
-DB on EC2
+### Advantage over using RDS versus deploying DB on EC2
 
 * RDS is a managed service:
 * Automated provisioning, OS patching
@@ -525,10 +524,17 @@ during the migration
 ### Databases & Analytics Summary in AWS
 
 **Relational Databases - OLTP: RDS & Aurora (SQL)**
+
 **In-memory Database: ElastiCache**
+
 **Key/Value Database: DynamoDB (serverless)**
+
 **Warehouse - OLAP: Redshift (SQL)**
+
 **Hadoop Cluster: EMR**
+
 **Athena: query data on Amazon S3 (serverless & SQL)**
+
 **Glue: Managed ETL (Extract Transform Load) and Data Catalog service**
+
 **Database Migration: DMS**

@@ -298,3 +298,85 @@ denied, will be logged into another S3 bucket
 * That data can be analyzed using data analysis tools…
 * Very helpful to come down to the root cause of an issue,
 or audit usage, view suspicious patterns, etc…
+
+### S3 Replication (CRR & SRR)
+
+* Must enable versioning in source and destination
+* Cross Region Replication (CRR)
+* Same Region Replication (SRR)
+* Buckets can be in different accounts
+* Copying is asynchronous
+* Must give proper IAM permissions to S3
+
+### S3 Storage Classes
+
+* Amazon S3 Standard - General Purpose
+* Amazon S3 Standard-Infrequent Access (IA)
+* Amazon S3 One Zone-Infrequent Access
+* Amazon S3 Intelligent Tiering
+* Amazon Glacier
+* Amazon Glacier Deep Archive
+* Amazon S3 Reduced Redundancy Storage (deprecated - omitted)
+
+### S3 Standard – General Purposes
+
+* 99.99% Availability
+* Used for frequently accessed data
+* Low latency and high throughput
+* Sustain 2 concurrent facility failures
+* Use Cases: Big Data analytics, mobile & gaming applications, content
+distribution…
+
+## S3 Standard – Infrequent Access (IA)
+
+* Suitable for data that is less frequently accessed, but requires rapid
+access when needed
+* 99.9% Availability
+* Lower cost compared to Amazon S3 Standard, but retrieval fee
+* Sustain 2 concurrent facility failures
+* Use Cases: As a data store for disaster recovery, backups…
+
+### S3 Intelligent-Tiering
+
+* 99.9% Availability
+* Same low latency and high throughput performance of S3 Standard
+* Cost-optimized by automatically moving objects between two access
+tiers based on changing access patterns:
+* Frequent access
+* Infrequent access
+* Resilient against events that impact an entire Availability Zone
+
+### S3 One Zone - Infrequent Access (IA)
+
+* Same as IA but data is stored in a single AZ
+* 99.5% Availability
+* Low latency and high throughput performance
+* Lower cost compared to S3-IA (by 20%)
+* Use Cases: Storing secondary backup copies of on-premise data, or
+storing data you can recreate
+
+### Amazon Glacier & Glacier Deep Archive
+
+* Low cost object storage (in GB/month) meant for archiving / backup
+* Data is retained for the longer term (years)
+* Various retrieval options of time + fees for retrieval:
+* Amazon Glacier – cheap:
+ Expedited (1 to 5 minutes)
+* Standard (3 to 5 hours)
+* Bulk (5 to 12 hours)
+* Amazon Glacier Deep Archive – cheapest:
+* Standard (12 hours)
+* Bulk (48 hours)
+
+## Snowball
+
+* Physical data transport solution that helps
+moving TBs or PBs of data in or out of
+AWS
+* Alternative to moving data over the
+network (and paying network fees)
+* Pay per data transfer job
+* Use cases: large data cloud migrations, DC
+decommission, disaster recovery
+* If it takes more than a week to transfer
+over the network, use Snowball devices!

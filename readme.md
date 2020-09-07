@@ -523,18 +523,13 @@ during the migration
 
 ### Databases & Analytics Summary in AWS
 
-**Relational Databases - OLTP: RDS & Aurora (SQL)**
-
-**In-memory Database: ElastiCache**
-
-**Key/Value Database: DynamoDB (serverless)**
-
-**Warehouse - OLAP: Redshift (SQL)**
-
-**Hadoop Cluster: EMR**
-
-**Athena: query data on Amazon S3 (serverless & SQL)**
-
-**Glue: Managed ETL (Extract Transform Load) and Data Catalog service**
-
-**Database Migration: DMS**
+```
+Relational Databases - OLTP: RDS & Aurora (SQL)
+In-memory Database: ElastiCache
+Key/Value Database: DynamoDB (serverless)
+Warehouse - OLAP: Redshift (SQL)
+Hadoop Cluster: EMR
+Athena: query data on Amazon S3 (serverless & SQL)
+Glue: Managed ETL (Extract Transform Load) and Data Catalog service
+Database Migration: DMS
+```

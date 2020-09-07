@@ -533,3 +533,53 @@ Athena: query data on Amazon S3 (serverless & SQL)
 Glue: Managed ETL (Extract Transform Load) and Data Catalog service
 Database Migration: DMS
 ```
+
+## Other Compute Services: ECS, Lambda, Batch, Lightsail
+
+### What is Docker?
+
+* Docker is a software development platform to deploy apps
+* Apps are packaged in containers that can be run on any OS
+* Apps run the same, regardless of where they’re run
+    * Any machine
+    * No compatibility issues
+    * Predictable behavior
+    * Less work
+    * Easier to maintain and deploy
+    * Works with any language, any OS, any technology
+* Scale containers up and down very quickly (seconds)
+* Docker is ”sort of” a virtualization technology, but not exactly
+* Resources are shared with the host => many containers on one server
+
+### ECS
+
+* ECS = Elastic Container Service
+* Launch Docker containers on AWS
+* You must provision & maintain the infrastructure (the EC2 instances)
+* AWS takes care of starting / stopping containers
+* Has integrations with the Application Load Balancer
+
+### Fargate
+
+* Launch Docker containers on AWS
+* You do not provision the infrastructure (no EC2 instances to manage) – simpler!
+* Serverless offering
+* AWS just runs containers for you based on the CPU / RAM you need
+
+### What’s serverless?
+
+* Serverless is a new paradigm in which the developers don’t have to manage servers anymore…
+* They just deploy code
+* They just deploy… functions !
+
+### Benefits of AWS Lambda
+* Easy Pricing:
+* Pay per request and compute time
+* Free tier of 1,000,000 AWS Lambda requests and 400,000 GBs of compute time
+* Integrated with the whole AWS suite of services
+* Event-Driven: functions get invoked by AWS when needed
+* Integrated with many programming languages
+* Easy monitoring through AWS CloudWatch
+* Easy to get more resources per functions (up to 3GB of RAM!)
+* Increasing RAM will also improve CPU and network!
+

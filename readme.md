@@ -617,3 +617,40 @@ Database Migration: DMS
 * Websites (templates for WordPress, Magento, Plesk, Joomla)
 * Dev / Test environment
 * Has high availability but no auto-scaling, limited AWS integrations
+
+## Deploying and Managing Infrastructure at Scale Section
+
+### CloudFormation
+
+* CloudFormation is a declarative way of outlining your AWS
+Infrastructure, for any resources (most of them are supported).
+* For example, within a CloudFormation template, you say:
+* I want a security group
+* I want two EC2 instances using this security group
+* I want an S3 bucket
+* I want a load balancer (ELB) in front of these machines
+* Then CloudFormation creates those for you, in the right order, with the
+exact configuration that you specify.
+* Infrastructure as code
+    * No resources are manually created, which is excellent for control
+    * Changes to the infrastructure are reviewed through code
+
+### AWS Elastic Beanstalk Overview
+
+* Elastic Beanstalk is a developer centric view of deploying
+an application on AWS
+* It uses all the component’s we’ve seen before:
+EC2, ASG, ELB, RDS, etc…
+* But it’s all in one view that’s easy to make sense of!
+* We still have full control over the configuration
+* Beanstalk = Platform as a Service (PaaS)
+* Beanstalk is free but you pay for the underlying instances
+
+### AWS CodeDeploy
+
+* We want to deploy our application
+automatically
+* Works with EC2 Instances
+* Works with On-Premises Servers
+* Hybrid service
+* Servers / Instances must be provisioned and configured ahead of time with the CodeDeploy Agent

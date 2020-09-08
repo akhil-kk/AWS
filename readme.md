@@ -654,3 +654,48 @@ automatically
 * Works with On-Premises Servers
 * Hybrid service
 * Servers / Instances must be provisioned and configured ahead of time with the CodeDeploy Agent
+
+### AWS Systems Manager (SSM)
+
+* Helps you manage your EC2 and On-Premises systems at scale
+* Another Hybrid AWS service
+* Get operational insights about the state of your infrastructure
+* Suite of 10+ products
+* Most important features are:
+* Patching automation for enhanced compliance
+* Run commands across an entire fleet of servers
+* Store parameter configuration with the SSM Parameter Store
+* Works for both Windows and Linux OS
+
+## Global Infrastructure Section
+
+### Amazon Route 53 Overview
+
+* Route53 is a Managed DNS (Domain Name System)
+* DNS is a collection of rules and records which helps clients understand
+how to reach a server through URLs.
+* In AWS, the most common records are:
+* www.google.com => 12.34.56.78 == A record (IPv4)
+* www.google.com => 2001:0db8:85a3:0000:0000:8a2e:0370:7334 == AAAA IPv6
+* search.google.com => www.google.com == CNAME: hostname to hostname
+* example.com => AWS resource == Alias (ex: ELB, CloudFront, S3, RDS, etc…)
+
+### AWS CloudFront
+
+* Content Delivery Network (CDN)
+* Improves read performance, content is cached at the edge
+* Improves users experience
+* 216 Point of Presence globally (edge locations)
+* DDoS protection (because worldwide), integration with Shield, AWS Web Application Firewall
+
+### CloudFront – Origins
+* S3 bucket
+    * For distributing files and caching them at the edge
+    * Enhanced security with CloudFront Origin Access Identity (OAI)
+    * CloudFront can be used as an ingress (to upload files to S3)
+    
+* Custom Origin (HTTP)
+    * Application Load Balancer
+    * EC2 instance
+    * S3 website (must first enable the bucket as a static S3 website)
+    * Any HTTP backend you want

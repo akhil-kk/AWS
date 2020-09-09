@@ -693,9 +693,60 @@ how to reach a server through URLs.
     * For distributing files and caching them at the edge
     * Enhanced security with CloudFront Origin Access Identity (OAI)
     * CloudFront can be used as an ingress (to upload files to S3)
-    
+
 * Custom Origin (HTTP)
     * Application Load Balancer
     * EC2 instance
     * S3 website (must first enable the bucket as a static S3 website)
     * Any HTTP backend you want
+
+### CloudFront vs S3 Cross Region Replication
+
+* CloudFront:
+    * Global Edge network
+    * Files are cached for a TTL (maybe a day)
+    * Great for static content that must be available everywhere
+* S3 Cross Region Replication:
+    * Must be setup for each region you want replication to happen
+    * Files are updated in near real-time
+    * Read only
+    * Great for dynamic content that needs to be available at low-latency in few regions
+
+### AWS Global Accelerator
+
+* Improve global application availability and performance using the AWS global network
+* Leverage the AWS internal network to optimize the route to your application (60% improvement)
+* 2 Anycast IP are created for your application and traffic is sent through
+Edge Locations
+* The Edge locations send the traffic to your application
+
+### Amazon SQS – Standard Queue
+
+* Oldest AWS offering (over 10 years old)
+* Fully managed service (~serverless), use to decouple applications
+* Scales from 1 message per second to 10,000s per second
+* Default retention of messages: 4 days, maximum of 14 days
+* No limit to how many messages can be in the queue
+* Messages are deleted after they’re read by consumers
+* Low latency (<10 ms on publish and receive)
+* Consumers share the work to read messages & scale horizontally
+
+### Amazon SNS
+
+* The “event publishers” only sends message to one SNS topic
+* As many “event subscribers” as we want to listen to the SNS topic notifications
+* Each subscriber to the topic will get all the messages
+* Up to 10,000,000 subscriptions per topic, 100,000 topics limit
+* SNS Subscribers can be:
+    * HTTP / HTTPS (with delivery retries – how many times)
+    * Emails, SMS messages, Mobile Notifications
+    * SQS queues (fan-out pattern), Lambda Functions (write-your-own integration)
+    
+## Cloud Monitoring Section
+
+### Amazon CloudWatch Metrics
+
+* CloudWatch provides metrics for every services in AWS
+* Metric is a variable to monitor (CPUUtilization, NetworkIn…)
+* Metrics have timestamps
+* Can create CloudWatch dashboards of metrics

@@ -750,3 +750,14 @@ Edge Locations
 * Metric is a variable to monitor (CPUUtilization, NetworkIn…)
 * Metrics have timestamps
 * Can create CloudWatch dashboards of metrics
+
+### Important Metrics
+
+* EC2 instances: CPU Utilization, Status Checks, Network (not RAM)
+* Default metrics every 5 minutes
+* Option for Detailed Monitoring ($$$): metrics every 1 minute
+* EBS volumes: Disk Read/Writes
+* S3 buckets: BucketSizeBytes, NumberOfObjects, AllRequests
+* Billing: Total Estimated Charge (only in us-east-1)
+* Service Limits: how much you’ve been using a service API
+* Custom metrics: push your own metrics

@@ -778,3 +778,16 @@ VPC & Subnets Primer
 * Public Subnets have a route to the internet gateway.
 * NAT Gateways (AWS-managed) & NAT Instances (self-managed) allow
 your instances in your Private Subnets to access the internet while remaining private
+
+### Network ACL & Security Groups
+
+* NACL (Network ACL)
+    * A firewall which controls traffic from and to subnet
+    * Can have ALLOW and DENY rules
+    * Are attached at the Subnet level
+    * Rules only include IP addresses
+* Security Groups
+    * A firewall that controls traffic to and from an ENI / an EC2 Instance
+    * Can have only ALLOW rules
+    * Rules include IP addresses and other security
+    groups

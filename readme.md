@@ -791,3 +791,8 @@ your instances in your Private Subnets to access the internet while remaining pr
     * Can have only ALLOW rules
     * Rules include IP addresses and other security
     groups
+
+### Network ACLs vs Security Groups
+
+![acl vs SG](img/security.png?raw=true "Title")
+

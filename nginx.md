@@ -82,3 +82,88 @@ server_name mydomain.com;
     * They inherit from their parrent
 
 ![nginx](img/context.png?raw=true "Title")
+
+### define a virtual host
+
+* each virtual hots being a new server context or server block like so a virtual host or server context is essentially responsible for listening on a port typically port 80 for http or port 443 for https for a given ip address or a domain.
+```
+events {}
+
+http {
+    include mime.types;
+
+    server {
+        listen 80;
+        server_name 52.66.247.22;
+
+        root /data/www;
+    }
+}
+```
+### location blocks
+
+```
+events {}
+
+http {
+    include mime.types;
+
+    server {
+        listen 80;
+        server_name 52.66.247.22;
+
+        root /data/www;
+    }
+
+    ## prefix match
+    location /greet {
+        return 200 'hello from NGINX "/greet" location';
+    }
+
+    ## exact match
+    location = /greet {
+        return 200 'hello from NGINX "/greet" location';
+    }
+
+     ## regex match
+    location ~ /greet[0-9] {
+        return 200 'hello from NGINX "/greet" location';
+    }
+
+     ## regex match -case insensitive
+    location ~* /greet[0-9] {
+        return 200 'hello from NGINX "/greet" location';
+    }
+}
+```
+
+## variables
+
+```
+events {}
+
+http {
+    include mime.types;
+
+    server {
+        listen 80;
+        server_name 52.66.247.22;
+
+        root /data/www;
+
+        set $weekend 'No';
+
+        # check if weekend
+        if ($date_local ~ 'Saturday|Sunday') {
+            set $weekend 'Yes';
+        }
+    }
+
+    location /inspect {
+        return 200 $weekend;
+    }
+}
+```
+
+
+

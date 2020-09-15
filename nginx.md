@@ -187,6 +187,30 @@ http {
 }
 ```
 
+### Master process and Worker process
+
+* Master Process - Actual nginix serice or software instance.
+* Worker process- Handle requests asynchronously.
+```
+worker_processes auto;
+```
+
+* This sets the number of connetions each worker process can accept.
+* To check open file limit 'ulimit -n'
+```
+events {
+    worker_connections 1024
+}
+```
+
+### pid directive
+
+```
+eg: pid /var/run/new_nginx.pid;
+```
+
+
+
 
 
 

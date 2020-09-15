@@ -165,5 +165,28 @@ http {
 }
 ```
 
+### rewrite and reload
+
+```
+events {}
+
+http {
+    include mime.types;
+
+    server {
+        listen 80;
+        server_name 52.66.247.22;
+
+        root /data/www;
+
+        rewrite ^/user/(\w+) /greet/$1;
+    location /greet {
+        return 200 "Hello user";
+        }
+    }
+}
+```
+
+
 
 

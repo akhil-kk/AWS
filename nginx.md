@@ -71,3 +71,14 @@ Options:
   -g directives : set global directives out of configuration file
 ```
 
+## configuration terms
+
+* Directive - A specific config options that get set in the config files and consist of a name and a value
+```
+server_name mydomain.com;
+```
+* Context - Sections within the configuration where diectives can be set for that given context.
+    * contexts are like scope
+    * They inherit from their parrent
+
+![nginx](img/context.png?raw=true "Title")
